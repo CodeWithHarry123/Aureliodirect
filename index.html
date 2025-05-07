@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rewarded Ad Redirect Page</title>
 
-  <!-- ✅ Correct placement of AdSense script -->
+  <!-- Google AdSense Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7743589417689476"
     crossorigin="anonymous"></script>
 
@@ -20,10 +20,10 @@
       height: 100vh;
       background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
       flex-direction: column;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       color: #fff;
       font-size: 2.5rem;
       margin-bottom: 40px;
@@ -49,33 +49,39 @@
     }
 
     #ad-container {
-      margin-top: 30px;
-      color: white;
-      font-size: 1.1rem;
+      display: none;
+      background: #ffffffdd;
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
 
   <h1>My Awesome Reward Page</h1>
-  <button class="btn" onclick="showAdThenRedirect()">Watch Ad to Continue</button>
+  <button class="btn" onclick="startAd()">Watch Ad to Continue</button>
 
-  <!-- ✅ Ad Container (replace with actual AdSense ad unit later) -->
-  <div id="ad-container" style="display: none;">
-    <!-- Replace below with real AdSense rewarded ad code when available -->
-    <p>Playing rewarded ad... please wait</p>
+  <div id="ad-container">
+    <p style="color:#333; font-size:1.1rem;">Ad is playing... please wait or click the button after 5 seconds</p>
+    <button class="btn" id="continueBtn" disabled>Continue</button>
   </div>
 
   <script>
-    function showAdThenRedirect() {
-      const adContainer = document.getElementById('ad-container');
-      adContainer.style.display = 'block';
+    function startAd() {
+      document.getElementById('ad-container').style.display = 'block';
 
-      // Simulate ad playback (replace with real ad callback later)
+      // Simulate ad play time (e.g., 5 seconds)
       setTimeout(() => {
-        window.location.href = "https://share.imagica.ai/?q=5afef67b-382d-451d-b3d7-f3b592685d76";
-      }, 5000); // Simulated 5 second ad
+        document.getElementById('continueBtn').disabled = false;
+        document.getElementById('continueBtn').innerText = "Ad Finished – Continue";
+      }, 5000); // Ad time in milliseconds
     }
+
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      window.location.href = "https://share.imagica.ai/?q=5afef67b-382d-451d-b3d7-f3b592685d76"; // Your redirect URL
+    });
   </script>
 
 </body>
