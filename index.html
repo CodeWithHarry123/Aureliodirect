@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rewarded Ad Redirect Page</title>
-  <style>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7743589417689476"
-     crossorigin="anonymous"></script>
+  <!-- ✅ Correct placement of AdSense script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7743589417689476"
+    crossorigin="anonymous"></script>
+
+  <style>
     body {
       margin: 0;
       padding: 0;
@@ -45,6 +47,12 @@
       color: #ffffff;
       transform: scale(1.05);
     }
+
+    #ad-container {
+      margin-top: 30px;
+      color: white;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
@@ -52,24 +60,21 @@
   <h1>My Awesome Reward Page</h1>
   <button class="btn" onclick="showAdThenRedirect()">Watch Ad to Continue</button>
 
-  <!-- Adsense Ad Placeholder -->
-  <!-- Replace this with actual AdSense code once approved -->
-  <div id="ad-container" style="display:none;">
-    <!-- Example AdSense Rewarded Ad code will go here -->
-    <!-- <script>adsbygoogle...</script> -->
-    <p style="color:white; margin-top:20px;">[Rewarded Ad Playing Here]</p>
+  <!-- ✅ Ad Container (replace with actual AdSense ad unit later) -->
+  <div id="ad-container" style="display: none;">
+    <!-- Replace below with real AdSense rewarded ad code when available -->
+    <p>Playing rewarded ad... please wait</p>
   </div>
 
   <script>
     function showAdThenRedirect() {
-      // Show ad placeholder
       const adContainer = document.getElementById('ad-container');
       adContainer.style.display = 'block';
 
-      // Simulate ad delay (use actual ad callback in production)
+      // Simulate ad playback (replace with real ad callback later)
       setTimeout(() => {
-        window.location.href = "https://share.imagica.ai/?q=5afef67b-382d-451d-b3d7-f3b592685d76"; // 🔁 Replace with your redirect link
-      }, 5000); // Simulate 5 seconds ad
+        window.location.href = "https://share.imagica.ai/?q=5afef67b-382d-451d-b3d7-f3b592685d76";
+      }, 5000); // Simulated 5 second ad
     }
   </script>
 
