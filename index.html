@@ -72,11 +72,11 @@
     function startAd() {
       document.getElementById('ad-container').style.display = 'block';
 
-      // Simulate ad play time (e.g., 5 seconds)
+      // Simulate ad play time (e.g., 15 seconds)
       setTimeout(() => {
         document.getElementById('continueBtn').disabled = false;
         document.getElementById('continueBtn').innerText = "Ad Finished – Continue";
-      }, 5000); // Ad time in milliseconds
+      }, 15000); // Ad time in milliseconds
     }
 
     document.getElementById('continueBtn').addEventListener('click', () => {
